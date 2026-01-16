@@ -1,76 +1,99 @@
+import { motion } from "framer-motion";
+
 const technologies = [
     {
-        title: "Sistemas Operativos",
+        title: "Sistemas Operativos Optimizados",
         description:
-            "Instalación, configuración y optimización de Windows y Linux para uso doméstico y empresarial.",
-        icon: (
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-        ),
+            "Configuramos Windows y Linux para que tu equipo sea más rápido, estable y seguro desde el primer día.",
     },
     {
-        title: "Hardware y Actualizaciones",
+        title: "Hardware Confiable y Escalable",
         description:
-            "Upgrade de SSD, RAM, fuentes y diagnóstico completo de componentes.",
-        icon: (
-            <>
-                <circle cx="6" cy="6" r="3"></circle>
-                <circle cx="6" cy="18" r="3"></circle>
-                <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
-            </>
-        ),
+            "Actualizamos SSD, memoria y componentes clave para extender la vida útil de tu equipo.",
     },
     {
-        title: "Redes y Soporte",
+        title: "Redes y Soporte Profesional",
         description:
-            "Configuración de redes, routers, cableado y soporte técnico para empresas.",
-        icon: (
-            <>
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-            </>
-        ),
+            "Diseñamos y mantenemos redes estables para hogares y empresas, evitando caídas y pérdidas de tiempo.",
     },
 ];
 
 export const Technologies = () => {
     return (
-        <section className="text-gray-600 body-font bg-gray-50">
-            <div className="container px-5 py-24 mx-auto">
-                <h2 className="sm:text-3xl text-2xl font-bold title-font text-center text-gray-900 mb-20">
-                    Tecnologías y Herramientas
-                    <br className="hidden sm:block" />
-                    con las que trabajamos
-                </h2>
+        <motion.section
+            className=" py-24 px-6"
+            aria-labelledby="technologies-title"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+                hidden: {},
+                visible: {
+                    transition: { staggerChildren: 0.15 },
+                },
+            }}
+        >
+            <div className="max-w-6xl mx-auto">
 
-                <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
+                {/* Header */}
+                <motion.header
+                    variants={{
+                        hidden: { opacity: 0, y: 30 },
+                        visible: {
+                            opacity: 1,
+                            y: 0,
+                            transition: { duration: 0.6, ease: "easeOut" },
+                        },
+                    }}
+                    className="text-center max-w-3xl mx-auto"
+                >
+                    <h2
+                        id="technologies-title"
+                        className="text-3xl md:text-4xl font-bold text-gray-900"
+                    >
+                        Soluciones técnicas con herramientas confiables
+                    </h2>
+                    <p className="mt-4 text-gray-600 text-lg">
+                        Usamos tecnología probada para garantizar rendimiento, seguridad y
+                        durabilidad en cada servicio.
+                    </p>
+                </motion.header>
+
+                {/* Cards */}
+                <div className="mt-16 grid md:grid-cols-3 gap-10">
                     {technologies.map((tech) => (
-                        <div key={tech.title} className="p-4 md:w-1/3 flex">
-                            <div className="w-12 h-12 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-4 flex-shrink-0">
-                                <svg
-                                    fill="none"
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    className="w-6 h-6"
-                                    viewBox="0 0 24 24"
-                                >
-                                    {tech.icon}
-                                </svg>
-                            </div>
-
-                            <div className="flex-grow pl-6">
-                                <h3 className="text-gray-900 text-lg title-font font-medium mb-2">
-                                    {tech.title}
-                                </h3>
-                                <p className="leading-relaxed text-base">
-                                    {tech.description}
-                                </p>
-                            </div>
-                        </div>
+                        <motion.article
+                            key={tech.title}
+                            variants={{
+                                hidden: { opacity: 0, y: 25 },
+                                visible: {
+                                    opacity: 1,
+                                    y: 0,
+                                    transition: { duration: 0.5, ease: "easeOut" },
+                                },
+                            }}
+                            whileHover={{ y: -6 }}
+                            className="
+                                        bg-white rounded-xl p-8
+                                        border border-gray-100
+                                        shadow-sm
+                                        hover:shadow-lg
+                                        focus-within:ring-2
+                                        focus-within:ring-indigo-500
+                                        outline-none
+                                    "
+                            tabIndex={0}
+                        >
+                            <h3 className="text-xl font-semibold text-gray-900">
+                                {tech.title}
+                            </h3>
+                            <p className="mt-4 text-gray-600 leading-relaxed">
+                                {tech.description}
+                            </p>
+                        </motion.article>
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };

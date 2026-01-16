@@ -1,84 +1,71 @@
 export const Footer = () => {
     return (
-        <footer className="bg-slate-900 text-gray-300 body-font">
-            <div className="container mx-auto px-6 py-8 flex flex-col sm:flex-row items-center">
-                {/* Logo / Brand */}
-                <div className="flex items-center justify-center sm:justify-start">
-                    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-accent text-white">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="w-6 h-6"
-                            viewBox="0 0 24 24"
-                        >
-                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                            <path d="M2 17l10 5 10-5" />
-                            <path d="M2 12l10 5 10-5" />
-                        </svg>
-                    </div>
-                    <span className="ml-3 text-xl font-semibold text-white">
-                        Servicio Técnico
-                    </span>
+        <footer className="bg-slate-900 text-gray-300">
+            <div className="max-w-7xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-3">
+
+                {/* Marca / Confianza */}
+                <div>
+                    <h3 className="text-xl font-semibold text-white">
+                        Servicio Técnico Hardware
+                    </h3>
+                    <p className="mt-3 text-sm text-gray-400">
+                        Reparación y mantenimiento de PCs, notebooks y equipos empresariales.
+                    </p>
+                    <p className="mt-2 text-sm text-gray-400">
+                        Atención rápida · Diagnóstico claro · Garantía escrita
+                    </p>
                 </div>
 
-                {/* Copyright */}
-                <p className="text-sm text-gray-400 sm:ml-6 sm:pl-6 sm:border-l sm:border-gray-700 sm:mt-0 mt-4 text-center">
-                    © {new Date().getFullYear()} Servicio Técnico Hardware —
-                    <span className="ml-1">Todos los derechos reservados</span>
-                </p>
+                {/* Servicios */}
+                <nav aria-label="Servicios">
+                    <h4 className="text-sm font-semibold uppercase text-white tracking-wide">
+                        Servicios
+                    </h4>
+                    <ul className="mt-4 space-y-2 text-sm">
+                        {[
+                            "Diagnóstico y reparación",
+                            "Mantenimiento preventivo",
+                            "Soporte a empresas",
+                            "Armado de equipos",
+                        ].map((item) => (
+                            <li key={item} className="hover:text-white cursor-pointer">
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
 
-                {/* Social Icons */}
-                <div className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center">
-                    {[
-                        {
-                            d: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z",
-                        },
-                        {
-                            d: "M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z",
-                        },
-                        {
-                            custom: (
-                                <>
-                                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-                                    <path d="M17.5 6.5h.01" />
-                                </>
-                            ),
-                        },
-                        {
-                            d: "M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z",
-                            circle: true,
-                        },
-                    ].map((icon, i) => (
-                        <a
-                            key={i}
-                            className="ml-3 text-gray-400 hover:text-white transition cursor-pointer"
-                        >
-                            <svg
-                                fill={icon.circle ? "currentColor" : "none"}
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                className="w-5 h-5"
-                                viewBox="0 0 24 24"
+                {/* Contacto */}
+                <div>
+                    <h4 className="text-sm font-semibold uppercase text-white tracking-wide">
+                        Contacto
+                    </h4>
+                    <p className="mt-4 text-sm text-gray-400">
+                        📍 Atención en taller y a domicilio
+                    </p>
+                    <p className="text-sm text-gray-400">📧 soporte@serviciotecnico.com</p>
+                    <p className="text-sm text-gray-400">📞 +54 11 1234 5678</p>
+
+                    {/* Redes */}
+                    <div className="flex gap-4 mt-4">
+                        {["Facebook", "Twitter", "Instagram", "LinkedIn"].map((social) => (
+                            <button
+                                key={social}
+                                aria-label={social}
+                                className="w-10 h-10 rounded-full border border-gray-600
+                                flex items-center justify-center
+                                hover:bg-white hover:text-slate-900 transition"
                             >
-                                {icon.custom ? (
-                                    icon.custom
-                                ) : (
-                                    <>
-                                        <path d={icon.d} />
-                                        {icon.circle && <circle cx="4" cy="4" r="2" />}
-                                    </>
-                                )}
-                            </svg>
-                        </a>
-                    ))}
+                                {social[0]}
+                            </button>
+                        ))}
+                    </div>
                 </div>
+            </div>
+
+            {/* Legal */}
+            <div className="border-t border-gray-800 text-center py-6 text-xs text-gray-500">
+                © {new Date().getFullYear()} Servicio Técnico Hardware. Todos los derechos reservados.
             </div>
         </footer>
     );

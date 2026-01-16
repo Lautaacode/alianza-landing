@@ -1,37 +1,155 @@
+import { motion } from "framer-motion";
+import { fadeSide, fadeUp, stagger } from "../../animations/motion";
+import AnimatedLogo from "../branding/Logo/AnimatedLogo";
+import { Reveal } from "../ui/Reveal";
+
 export const Hero = () => {
     return (
-        <section className="text-gray-600 body-font">
-            <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
-                <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                    <img
-                        className="object-cover object-center rounded"
-                        alt="Servicio técnico de hardware"
-                        src="https://dummyimage.com/720x600"
-                    />
-                </div>
+        <section className="min-h-screen flex items-center bg-white">
+            <div
+                className="
+                    mx-auto
+                    max-w-7xl
+                    w-full
+                    px-6
 
-                <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                    <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-                        Reparación y Mantenimiento de Hardware
-                        <br className="hidden lg:inline-block" />
-                        para PCs y Notebooks
-                    </h1>
+                    /* MOBILE */
+                    flex
+                    flex-col
+                    justify-around
+                    min-h-screen
+                    py-8
 
-                    <p className="mb-8 leading-relaxed">
-                        Servicio técnico profesional para hogares y empresas. Diagnóstico
-                        claro, reparación confiable y atención rápida para que tus equipos
-                        vuelvan a funcionar sin problemas.
-                    </p>
-
-                    <div className="flex justify-center">
-                        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                            Solicitar diagnóstico
-                        </button>
-                        <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-                            Contactar soporte
-                        </button>
+                    /* DESKTOP */
+                    md:grid
+                    md:grid-cols-2
+                    md:items-center
+                    md:justify-items-stretch
+                    md:py-20
+                    
+                "
+            >
+                {/* LOGO */}
+                <Reveal
+                    variants={fadeSide("left")}
+                    className="
+                        flex
+                        justify-center
+                        md:justify-start
+                        w-full
+                    "
+                >
+                    <div
+                        className="
+                            w-56
+                            sm:w-56
+                            md:w-68
+                            lg:w-74
+                            xl:w-87
+                            aspect-square
+                        "
+                    >
+                        <AnimatedLogo
+                            duration={6}
+                            strokeColor="#000000"
+                            gradientStart="#ffffff"
+                            gradientEnd="#000000"
+                        />
                     </div>
-                </div>
+                </Reveal>
+
+                {/* TEXTO */}
+                <Reveal
+                    variants={fadeSide("right")}
+                    className="
+                        flex
+                        justify-center
+                        md:justify-end
+                        w-full
+                    "
+                >
+                    <motion.div
+                        variants={stagger}
+                        className="
+                            flex
+                            flex-col
+                            items-center
+                            md:items-start
+                            text-center
+                            md:text-left
+                            max-w-xl
+                        "
+                    >
+                        <motion.h1
+                            variants={fadeUp}
+                            className="
+                                text-3xl
+                                sm:text-4xl
+                                lg:text-5xl
+                                font-semibold
+                                text-gray-900
+                                leading-tight
+                            "
+                        >
+                            Reparación y Mantenimiento de Hardware
+                        </motion.h1>
+
+                        <motion.p
+                            variants={fadeUp}
+                            className="
+                                mt-4
+                                text-gray-600
+                            "
+                        >
+                            Diagnóstico claro, reparación confiable y tiempos de respuesta
+                            rápidos para hogares, profesionales y empresas.
+                        </motion.p>
+
+                        <motion.div
+                            variants={fadeUp}
+                            className="
+                                mt-8
+                                flex
+                                flex-col
+                                sm:flex-row
+                                gap-4
+                            "
+                        >
+                            <motion.button
+                                whileHover={{ y: -2 }}
+                                whileTap={{ scale: 0.97 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                                className="
+                                    bg-indigo-600
+                                    text-white
+                                    px-8 py-3
+                                    rounded-lg
+                                    text-lg
+                                    shadow-md
+                                    hover:bg-indigo-700
+                                "
+                            >
+                                Solicitar diagnóstico
+                            </motion.button>
+
+                            <motion.button
+                                whileHover={{ y: -2 }}
+                                whileTap={{ scale: 0.97 }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                                className="
+                                    bg-gray-100
+                                    text-gray-700
+                                    px-8 py-3
+                                    rounded-lg
+                                    text-lg
+                                    hover:bg-gray-200
+                                "
+                            >
+                                Hablar con soporte
+                            </motion.button>
+                        </motion.div>
+                    </motion.div>
+                </Reveal>
             </div>
         </section>
     );

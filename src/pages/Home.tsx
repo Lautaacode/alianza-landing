@@ -3,7 +3,6 @@ import { Services } from "../components/sections/Services";
 import { WhyUs } from "../components/sections/WhyUs";
 import { Process } from "../components/sections/Process";
 import { Technologies } from "../components/sections/Technologies";
-import { Testimonials } from "../components/sections/Testimonials";
 import { Contact } from "../components/sections/Contact";
 
 
@@ -12,10 +11,11 @@ export const Home = () => {
         <>
             <Hero />
             <Services />
-            <WhyUs />
+            <section className="bg-gray-50">
+                <WhyUs />
+                <Technologies />
+            </section>
             <Process />
-            <Technologies />
-            <Testimonials />
             <Contact />
         </>
     );

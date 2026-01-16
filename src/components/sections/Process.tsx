@@ -1,93 +1,94 @@
+import { motion } from "framer-motion";
+
 const steps = [
     {
         title: "Contacto",
-        description: "El cliente se comunica con nosotros por WhatsApp, formulario o teléfono.",
-        icon: (
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        ),
+        description:
+            "Nos escribís y nos contás qué le pasa a tu equipo. Respondemos rápido.",
     },
     {
         title: "Diagnóstico",
-        description: "Analizamos el equipo para detectar la falla o necesidad de mantenimiento.",
-        icon: (
-            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-        ),
+        description:
+            "Revisamos el equipo y te explicamos el problema en palabras simples.",
     },
     {
         title: "Presupuesto",
-        description: "Enviamos un presupuesto claro y sin costos ocultos.",
-        icon: (
-            <>
-                <circle cx="12" cy="5" r="3" />
-                <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3" />
-            </>
-        ),
+        description:
+            "Te pasamos un presupuesto claro. Vos decidís si avanzar.",
     },
     {
-        title: "Entrega",
-        description: "Equipo reparado, probado y listo para usar.",
-        icon: (
-            <>
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-            </>
-        ),
+        title: "Reparación y entrega",
+        description:
+            "Reparamos, probamos y te entregamos el equipo listo para usar.",
     },
 ];
 
 export const Process = () => {
     return (
-        <section className="text-gray-600 body-font py-24">
-            <div className="container px-5 mx-auto">
-                <h2 className="text-3xl font-bold text-center text-gray-900 mb-16">
+        <motion.section
+            className="py-24 bg-white"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-120px" }}
+            variants={{
+                hidden: {},
+                visible: { transition: { staggerChildren: 0.15 } },
+            }}
+        >
+            <div className="container px-5 mx-auto max-w-5xl">
+
+                {/* Header */}
+                <motion.h2
+                    variants={{
+                        hidden: { opacity: 0, y: 24 },
+                        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+                    }}
+                    className="text-3xl font-bold text-center text-gray-900 mb-16"
+                >
                     Cómo trabajamos
-                </h2>
+                </motion.h2>
 
-                <div className="flex flex-wrap">
+                {/* Steps */}
+                <div className="space-y-6">
                     {steps.map((step, index) => (
-                        <div
+                        <motion.div
                             key={step.title}
-                            className="flex relative pb-20 sm:items-center md:w-2/3 mx-auto"
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+                            }}
+                            className="
+                                        flex gap-6 items-start
+                                        rounded-xl border border-gray-100
+                                        bg-gray-50 p-6
+                                        hover:shadow-md transition
+                                    "
                         >
-                            {/* Línea vertical */}
-                            <div className="h-full w-6 absolute inset-0 flex items-center justify-center">
-                                <div className="h-full w-1 bg-gray-200 pointer-events-none"></div>
-                            </div>
-
                             {/* Número */}
-                            <div className="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-accent text-white relative z-10 font-medium text-sm">
+                            <div className="
+                                            flex-shrink-0
+                                            w-10 h-10
+                                            rounded-full
+                                            bg-accent/10 text-accent
+                                            flex items-center justify-center
+                                            font-semibold
+                                        ">
                                 {index + 1}
                             </div>
 
                             {/* Contenido */}
-                            <div className="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
-                                <div className="flex-shrink-0 w-24 h-24 bg-accent/10 text-accent rounded-full inline-flex items-center justify-center">
-                                    <svg
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        className="w-12 h-12"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        {step.icon}
-                                    </svg>
-                                </div>
-
-                                <div className="flex-grow sm:pl-6 mt-6 sm:mt-0">
-                                    <h3 className="font-medium text-gray-900 mb-1 text-xl">
-                                        {step.title}
-                                    </h3>
-                                    <p className="leading-relaxed">
-                                        {step.description}
-                                    </p>
-                                </div>
+                            <div>
+                                <h3 className="text-lg font-semibold text-gray-900">
+                                    {step.title}
+                                </h3>
+                                <p className="mt-2 text-gray-600 leading-relaxed">
+                                    {step.description}
+                                </p>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
-        </section>
+        </motion.section>
     );
 };
