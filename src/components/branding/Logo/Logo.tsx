@@ -4,16 +4,16 @@ import type { LogoProps } from "./Logo.types";
 
 
 export default function Logo({
-    gradientStart = "#ffffff",
-    gradientEnd = "#000000",
-    strokeColor = "#000000",
+    gradientStart,
+    gradientEnd,
+    strokeColor,
     strokeWidth = 2,
     ...props
 }: LogoProps) {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 512 512"
+            viewBox="80 95 350 350"
             {...props}
         >
             <defs>

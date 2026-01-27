@@ -1,9 +1,12 @@
-import { Hero } from "../components/sections/Hero";
-import { Services } from "../components/sections/Services";
-import { WhyUs } from "../components/sections/WhyUs";
-import { Process } from "../components/sections/Process";
-import { Technologies } from "../components/sections/Technologies";
-import { Contact } from "../components/sections/Contact";
+
+import { Contact } from "../components/sections/contact/Contact";
+import { Hero } from "../components/sections/hero";
+import { Process } from "../components/sections/process";
+import { Services } from "../components/sections/services";
+import { Technologies } from "../components/sections/technologies/Technologies";
+import { WhyUs } from "../components/sections/whyus/WhyUs";
+import { Section } from "../components/ui/section";
+
 
 
 export const Home = () => {
@@ -11,12 +14,12 @@ export const Home = () => {
         <>
             <Hero />
             <Services />
-            <section className="bg-gray-50">
+            <Section variant="soft">
                 <WhyUs />
                 <Technologies />
-            </section>
+            </Section>
             <Process />
-            <Contact />
+            <Contact/>
         </>
     );
 };

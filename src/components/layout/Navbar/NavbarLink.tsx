@@ -1,10 +1,11 @@
+import type { NavLink } from "./navbar.types"
+
+
+
 type NavbarLinkProps = {
-    link: {
-        href: string;
-        label: string;
-    };
-    onClick?: () => void;
-};
+    link: NavLink
+    onClick?: () => void
+}
 
 export const NavbarLink = ({ link, onClick }: NavbarLinkProps) => (
     <a
@@ -14,4 +15,4 @@ export const NavbarLink = ({ link, onClick }: NavbarLinkProps) => (
     >
         {link.label}
     </a>
-);
+)
