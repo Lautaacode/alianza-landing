@@ -7,4 +7,5 @@ export interface InputProps
     extends InputHTMLAttributes<HTMLInputElement> {
     label?: string
     variant?: InputVariant
+    error?: string
 }

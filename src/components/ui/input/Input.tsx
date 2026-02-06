@@ -6,6 +6,7 @@ export const Input = ({
     variant = 'dark',
     id,
     className,
+    error,
     ...props
 }: InputProps) => {
     const inputId = id ?? props.name
@@ -24,8 +25,19 @@ export const Input = ({
             <input
                 id={inputId}
                 {...props}
-                className={`${inputBase} ${inputVariants[variant]} ${className ?? ''}`}
+                className={`
+            ${inputBase}
+            ${inputVariants[variant]}
+            ${error ? 'border-red-400 focus:ring-red-400/40' : ''}
+            ${className ?? ''}
+        `}
             />
+
+            {error && (
+                <p className="text-sm text-red-400 mt-1">
+                    {error}
+                </p>
+            )}
         </div>
     )
 }
