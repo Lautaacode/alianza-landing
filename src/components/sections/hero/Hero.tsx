@@ -1,20 +1,41 @@
 import { motion } from "framer-motion";
 import { fadeSide, fadeUp, stagger } from "../../../motion"
-import AnimatedLogo from "../../branding/logo/AnimatedLogo";
+import AnimatedLogo from "../../branding/icons/alianza/AnimatedLogo";
 import { Reveal } from "../../ui/reveal";
 import { WatermarkText } from "../../branding/WatermarkText";
 import { Button } from "../../ui/button";
 import { Section } from "../../ui/section";
 import { Heading, Text } from "../../ui/typography";
 import { heroContent } from "../../sections/hero";
+import { WhatsAppIcon } from "../../branding/icons/whatsapp/WhatsAppIcon";
+import { useEffect, useRef } from "react";
+import { useHeroVisibility } from "./hero-visibility.context";
 
 
 
 export const Hero = () => {
     const { title, description, watermark, actions } = heroContent
+    const heroRef = useRef<HTMLDivElement>(null)
+    const { setHeroVisible } = useHeroVisibility()
 
+    useEffect(() => {
+        if (!heroRef.current) return
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setHeroVisible(entry.isIntersecting)
+            },
+            {
+                threshold: 0.3, // cuando ~30% del hero está visible
+            }
+        )
+
+        observer.observe(heroRef.current)
+
+        return () => observer.disconnect()
+    }, [setHeroVisible])
     return (
-        <Section variant="default" className="relative min-h-screen overflow-hidden">
+        <Section ref={heroRef} variant="default" className="relative min-h-screen overflow-hidden">
             {/* BACKDROP */}
             <div className="absolute inset-0 bg-linear-to-b from-hero-backdrop-from via-hero-backdrop-via to-hero-backdrop-to" />
 
@@ -56,7 +77,7 @@ export const Hero = () => {
 
                         <motion.div variants={fadeUp} className="mt-8 flex gap-4 flex-col sm:flex-row">
                             <Button intent="primary">{actions.primary.label}</Button>
-                            <Button intent="secondary">{actions.secondary.label}</Button>
+                            <Button intent="secondary">{actions.secondary.label} <WhatsAppIcon className=" h-5 w-5" /> </Button>
                         </motion.div>
                     </motion.div>
                 </Reveal>

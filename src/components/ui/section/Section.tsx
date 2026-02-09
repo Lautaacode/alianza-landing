@@ -1,43 +1,28 @@
 import type { SectionProps } from './section.types'
 import { sectionBase, sectionVariants } from './section.variants'
 
-export const Section = ({
-    children,
-    variant = 'default',
-    className,
-}: SectionProps) => {
-    return (
-        <section
-            className={`
-        ${sectionBase}
-        ${sectionVariants[variant]}
-        ${className ?? ''}
-        `}
-        >
-            <div className="max-w-7xl mx-auto px-6">
-                {children}
-            </div>
-        </section>
-    )
-}
+import { forwardRef } from 'react'
+
+export const Section = forwardRef<HTMLElement, SectionProps>(
+    ({ children, variant = 'default', className }, ref) => {
+        return (
+            <section
+                ref={ref}
+                className={`
+                    ${sectionBase}
+                    ${sectionVariants[variant]}
+                    ${className ?? ''}
+                `}
+            >
+                <div className="max-w-7xl mx-auto px-6">
+                    {children}
+                </div>
+            </section>
+        )
+    }
+)
+
+Section.displayName = 'Section'
 
 
-// export const Section = ({
-//     children,
-//     variant = 'light',
-// }: {
-//     children: React.ReactNode
-//     variant?: 'light' | 'soft' | 'dark'
-// }) => {
-//     const styles = {
-//         light: 'bg-white',
-//         soft: 'bg-slate-50',
-//         dark: 'bg-dark text-white',
-//     }
 
-//     return (
-//         <section className={`${styles[variant]} py-24`}>
-//             <div className="max-w-7xl mx-auto px-6">{children}</div>
-//         </section>
-//     )
-// }

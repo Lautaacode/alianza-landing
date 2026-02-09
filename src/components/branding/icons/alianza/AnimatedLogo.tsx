@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { logoContainer, logoStroke, logoFill, } from "../../../motion/motion";
+import { logoContainer, logoStroke, logoFill, } from "../../../../motion/motion";
 import { PATH_D } from "./Logo.path";
 import type { AnimatedLogoProps } from "./Logo.types";
 import React from "react";

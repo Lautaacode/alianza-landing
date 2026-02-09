@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import { NavbarLink } from "./NavbarLink";
 import type { NavbarProps } from "../navbar";
-import Logo from "../../branding/logo/Logo";
+import Logo from "../../branding/icons/alianza/Logo";
+
 
 
 export const Navbar = ({ links }: NavbarProps) => {
@@ -39,10 +40,6 @@ export const Navbar = ({ links }: NavbarProps) => {
 
                                     {/* CTA / HAMBURGER */}
                                     <div className="flex items-center gap-4">
-                                        <button className="hidden lg:inline-flex rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white">
-                                            Contactar
-                                        </button>
-
                                         <DisclosureButton className="lg:hidden p-2">
                                             {open ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
                                         </DisclosureButton>
