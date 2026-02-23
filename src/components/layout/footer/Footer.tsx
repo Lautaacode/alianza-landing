@@ -1,5 +1,6 @@
-import { Heading, Text } from "../../ui/typography"
+import { Heading } from "../../ui/typography/Heading"
 import { footerContent } from "./footer.content"
+import { Text } from "../../ui/typography/Text"
 
 export const Footer = () => {
     const { brand, services, contact, socials, copyright } = footerContent

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Section } from "../../ui/section";
+import { Section } from "../../ui/section/Section";
 import { fadeSide, fadeUp, stagger } from "../../../motion/motion";
 import { Reveal } from "../../ui/reveal/Reveal";
 import { SectionHeader } from "../../ui/sectionHeader/SectionHeader";

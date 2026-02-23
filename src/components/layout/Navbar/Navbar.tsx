@@ -5,8 +5,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import { NavbarLink } from "./NavbarLink";
-import type { NavbarProps } from "../navbar";
 import { AnimatedLogo } from "../../branding/icons/alianza/LogoAlianza";
+import type { NavbarProps } from "./navbar.types";
 
 
 

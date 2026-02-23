@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
-import { fadeSide, fadeUp, stagger } from "../../../motion"
-import { Reveal } from "../../ui/reveal";
-import { WatermarkText } from "../../branding/WatermarkText";
-import { LinkButton } from "../../ui/button";
-import { Section } from "../../ui/section";
-import { Heading, Text } from "../../ui/typography";
-import { heroContent } from "../../sections/hero";
 import { WhatsAppIcon } from "../../branding/icons/whatsapp/WhatsAppIcon";
 import { useEffect, useRef } from "react";
 import { useHeroVisibility } from "./hero-visibility.context";
 import { AnimatedLogo } from "../../branding/icons/alianza/LogoAlianza";
+import { heroContent } from "./hero.content";
+import { fadeSide, fadeUp, stagger } from "../../../motion/motion";
+import { WatermarkText } from "../../branding/WatermarkText";
+import { LinkButton } from "../../ui/button/LinkButton";
+import { Reveal } from "../../ui/reveal/Reveal";
+import { Section } from "../../ui/section/Section";
+import { Heading } from "../../ui/typography/Heading";
+import { Text } from "../../ui/typography/Text";
 
 
 

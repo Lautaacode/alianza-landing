@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion'
-import { LinkButton } from '../../../ui/button'
+import { LinkButton } from '../../../ui/button/LinkButton'
 import { useHeroVisibility } from '../../../sections/hero/hero-visibility.context'
 import { WhatsAppIcon } from './WhatsAppIcon'
 

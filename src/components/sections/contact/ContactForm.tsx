@@ -1,9 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion"
 import type { UseFormReturn } from "react-hook-form"
 import type { ContactFormValues } from "./contact.schema"
-import { Button } from "../../ui/button"
 import { inputBase, inputVariants } from "../../ui/input/input.variants"
-import { Input } from "../../ui/input"
+import { Input } from "../../ui/input/Input"
+import { Button } from "../../ui/button/Button"
+
 
 interface ContactFormProps {
     form: UseFormReturn<ContactFormValues>

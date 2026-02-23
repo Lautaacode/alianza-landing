@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import { fadeUp, stagger } from "../../../motion/motion";
 import { MotionCard } from "../../ui/card/MotionCard";
 import { Reveal } from "../../ui/reveal/Reveal";
-import { Section } from "../../ui/section";
 import { SectionHeader } from "../../ui/sectionHeader/SectionHeader";
-import { Heading, Text } from "../../ui/typography";
-
-
 import { servicesContent } from './services.content'
+import { Section } from "../../ui/section/Section";
+import { Heading } from "../../ui/typography/Heading";
+import { Text } from "../../ui/typography/Text";
+
 
 export const Services = () => {
     const { heading, items } = servicesContent
