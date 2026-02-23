@@ -1,10 +1,14 @@
+// Navbar.tsx
+
 import { Disclosure, DisclosureButton } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect } from "react";
 import { NavbarLink } from "./NavbarLink";
 import type { NavbarProps } from "../navbar";
-import Logo from "../../branding/icons/alianza/Logo";
+import { AnimatedLogo } from "../../branding/icons/alianza/LogoAlianza";
+
+
 
 
 
@@ -24,12 +28,22 @@ export const Navbar = ({ links }: NavbarProps) => {
                                 <div className="flex h-16 items-center justify-between">
 
                                     {/* LOGO */}
-                                    <div className="flex items-center gap-2">
-                                        <Logo className="w-8 h-8" />
+                                    <a className="flex items-center gap-2" href="#hero">
+                                        <AnimatedLogo
+                                        className="w-8 h-8"
+                                            gradients={{
+                                                right: { start: "#aeaeae", end: "#ffffff" },
+                                                left: { start: "#00274e", end: "#ffffff" },
+                                                ring: { start: "#cecece", end: "#003366" },
+                                            }}
+                                        />
+
+
+
                                         <span className="text-lg font-semibold text-gray-900">
                                             Alianza Ascensores
                                         </span>
-                                    </div>
+                                    </a>
 
                                     {/* DESKTOP */}
                                     <nav className="hidden lg:flex gap-6">

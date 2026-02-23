@@ -1,16 +1,19 @@
 import type { HeroContent } from './hero.types'
 
 export const heroContent: HeroContent = {
-    title: 'Reparación y Mantenimiento de Hardware',
+    title: 'Mantenimiento profesional de ascensores',
     description:
-        'Diagnóstico claro, reparación confiable y tiempos de respuesta rápidos para hogares, profesionales y empresas.',
+        `Más de 20 años de experiencia brindando un servicio seguro, confiable y
+        alineado con la normativa vigente para consorcios, empresas e industrias.`,
     watermark: ['ALIANZA', 'ASCENSORES', 'DE ASCALIAN SAS'],
     actions: {
         primary: {
-            label: 'Solicitar diagnóstico',
+            label: 'Solicitar presupuesto',
+            href: '#contact',
         },
         secondary: {
-            label: 'Hablar con soporte',
+            label: 'Contactanos ',
+            href: 'https://api.whatsapp.com/send/?phone=%2B541172366568&text&type=phone_number&app_absent=0',
         },
     },
 }

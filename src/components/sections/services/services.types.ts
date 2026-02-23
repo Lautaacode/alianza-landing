@@ -1,7 +1,6 @@
 export type ServiceItem = {
     title: string
     description: string
-    cta: string
     image: string
 }
 

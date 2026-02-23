@@ -5,17 +5,26 @@ export interface FooterBrand {
 
 export interface FooterNavSection {
     title: string
-    items: string[]
+    items: FooterNavItem[]
+}
+
+export interface FooterNavItem {
+    label: string
+    href?: string
 }
 
 export interface FooterContactItem {
-    icon: string
+    icon: React.ElementType
+    iconClass?: string
     label: string
+    href?: string
 }
 
 export interface FooterSocial {
+    icon: React.ElementType
+    iconClass?: string
     label: string
-    short: string
+    href: string
 }
 
 export interface FooterContent {

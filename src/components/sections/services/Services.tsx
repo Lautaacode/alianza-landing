@@ -1,4 +1,3 @@
-import { Button } from "../../ui/button/Button";
 import { motion } from "framer-motion";
 import { fadeUp, stagger } from "../../../motion/motion";
 import { MotionCard } from "../../ui/card/MotionCard";
@@ -14,7 +13,7 @@ export const Services = () => {
     const { heading, items } = servicesContent
 
     return (
-        <Section variant="default">
+        <Section id="services" variant="default">
             <Reveal variants={stagger}>
                 {/* Header */}
                 <motion.div
@@ -33,7 +32,7 @@ export const Services = () => {
             flex gap-6 overflow-x-auto snap-x snap-mandatory
             md:grid md:grid-cols-2 xl:grid-cols-4
             md:overflow-visible
-          "
+            "
                 >
                     {items.map(service => (
                         <div
@@ -44,9 +43,8 @@ export const Services = () => {
                                 <img
                                     src={service.image}
                                     alt={service.title}
-                                    className="h-32 w-full object-cover rounded-lg mb-6"
+                                    className="h-42 w-full object-cover rounded-lg mb-6"
                                 />
-
                                 <Heading as="h3" level="md" className="mb-2">
                                     {service.title}
                                 </Heading>
@@ -54,10 +52,6 @@ export const Services = () => {
                                 <Text tone="muted" className="mb-6">
                                     {service.description}
                                 </Text>
-
-                                <Button intent="secondary" className="px-0">
-                                    {service.cta} →
-                                </Button>
                             </MotionCard>
                         </div>
                     ))}

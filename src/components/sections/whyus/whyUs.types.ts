@@ -1,6 +1,7 @@
 export type WhyUsItem = {
     title: string
     description: string
+    icon: React.ElementType
     highlight?: boolean
 }
 

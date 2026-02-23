@@ -1,9 +1,9 @@
-import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser';
 import type { ContactFormValues } from './contact.schema'
 
-const SERVICE_ID = 'service_bjmgm2f'
-const TEMPLATE_ID = 'template_635bozt'
-const PUBLIC_KEY = 'D_V8uqEP4YEElomkM'
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 export const sendContact = async (data: ContactFormValues) => {
     return emailjs.send(

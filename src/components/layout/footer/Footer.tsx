@@ -38,10 +38,12 @@ export const Footer = () => {
                     <ul className="mt-4 space-y-2 text-sm">
                         {services.items.map(item => (
                             <li
-                                key={item}
+                                key={item.label}
                                 className="cursor-pointer hover:text-text-inverse transition"
                             >
-                                {item}
+                                <a href={item.href}>
+                                    {item.label}
+                                </a>
                             </li>
                         ))}
                     </ul>
@@ -57,21 +59,39 @@ export const Footer = () => {
                         Contacto
                     </Heading>
 
-                    <div className="mt-4 space-y-1 text-sm">
-                        {contact.map(item => (
-                            <Text key={item.label} tone="muted">
-                                {item.icon} {item.label}
-                            </Text>
-                        ))}
+                    <div className="mt-4 space-y-2 text-sm">
+                        {contact.map(item => {
+                            const Icon = item.icon
+
+                            return (
+                                <a
+                                    key={item.label}
+                                    href={item.href}
+                                    target={item.href?.startsWith('http') ? '_blank' : undefined}
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-text-muted hover:text-text-inverse transition"
+                                >
+                                    <Icon className={`w-5 h-5 ${item.iconClass}`} />
+                                    <span>{item.label}</span>
+                                </a>
+                            )
+                        })}
                     </div>
+
 
                     {/* Social */}
                     <div className="flex gap-4 mt-4">
-                        {socials.map(social => (
-                            <button
-                                key={social.label}
-                                aria-label={social.label}
-                                className="
+                        {socials.map(social => {
+                            const Icon = social.icon
+
+                            return (
+                                <a
+                                    key={social.label}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={social.label}
+                                    className="
                                     w-10 h-10
                                     rounded-full
                                     border border-border-soft
@@ -80,11 +100,13 @@ export const Footer = () => {
                                     hover:bg-primary hover:text-text-inverse
                                     transition
                                 "
-                            >
-                                {social.short}
-                            </button>
-                        ))}
+                                >
+                                    <Icon className={`w-5 h-5 ${social.iconClass}`} />
+                                </a>
+                            )
+                        })}
                     </div>
+
                 </div>
             </div>
 

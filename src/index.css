@@ -1,2 +1,6 @@
-
-
+html{
+scroll-behavior: smooth;
+}
+.rl{
+border: 1px solid red;
+}

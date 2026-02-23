@@ -1,26 +1,34 @@
 import type { TechnologiesContent } from './technologies.types'
+import { CheckBadgeIcon, ShieldCheckIcon, WrenchIcon } from '@heroicons/react/24/outline'
 
 export const technologiesContent: TechnologiesContent = {
     heading: {
-        title: 'Soluciones técnicas con herramientas confiables',
+        title: 'Soluciones técnicas con estándares profesionales',
         description:
-            'Usamos tecnología probada para garantizar rendimiento, seguridad y durabilidad.',
+            'Aplicamos procedimientos y tecnologías confiables para garantizar seguridad, eficiencia operativa y durabilidad en cada ascensor.',
     },
     items: [
         {
-            title: 'Sistemas Operativos Optimizados',
+            title: 'Sistemas de control y seguridad',
             description:
-                'Configuramos Windows y Linux para que tu equipo sea más rápido, estable y seguro desde el primer día.',
-        },
+                'Verificamos, ajustamos y optimizamos los sistemas de control, maniobra y seguridad para asegurar un funcionamiento estable y conforme a normativa.',
+            icon: ShieldCheckIcon,
+        
+            },
         {
-            title: 'Hardware Confiable y Escalable',
+            title: 'Componentes certificados y actualizaciones',
             description:
-                'Actualizamos SSD, memoria y componentes clave para extender la vida útil de tu equipo.',
-        },
+                'Utilizamos repuestos originales o equivalentes certificados, realizando actualizaciones técnicas que prolongan la vida útil del equipo.',
+            icon: CheckBadgeIcon,
+        
+            },
         {
-            title: 'Redes y Soporte Profesional',
+            title: 'Mantenimiento integral y soporte técnico',
             description:
-                'Diseñamos y mantenemos redes estables para hogares y empresas, evitando caídas y pérdidas de tiempo.',
-        },
+                'Brindamos mantenimiento preventivo, correctivo y soporte técnico especializado para consorcios, empresas e industrias.',
+            icon: WrenchIcon,
+        
+            },
     ],
+
 }

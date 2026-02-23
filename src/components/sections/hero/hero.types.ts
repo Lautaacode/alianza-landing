@@ -5,9 +5,11 @@ export interface HeroContent {
     actions: {
         primary: {
             label: string
+            href: string
         }
         secondary: {
             label: string
+            href: string
         }
     }
 }

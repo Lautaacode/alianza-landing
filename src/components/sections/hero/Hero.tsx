@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
 import { fadeSide, fadeUp, stagger } from "../../../motion"
-import AnimatedLogo from "../../branding/icons/alianza/AnimatedLogo";
 import { Reveal } from "../../ui/reveal";
 import { WatermarkText } from "../../branding/WatermarkText";
-import { Button } from "../../ui/button";
+import { LinkButton } from "../../ui/button";
 import { Section } from "../../ui/section";
 import { Heading, Text } from "../../ui/typography";
 import { heroContent } from "../../sections/hero";
 import { WhatsAppIcon } from "../../branding/icons/whatsapp/WhatsAppIcon";
 import { useEffect, useRef } from "react";
 import { useHeroVisibility } from "./hero-visibility.context";
+import { AnimatedLogo } from "../../branding/icons/alianza/LogoAlianza";
+
+
 
 
 
@@ -35,12 +37,12 @@ export const Hero = () => {
         return () => observer.disconnect()
     }, [setHeroVisible])
     return (
-        <Section ref={heroRef} variant="default" className="relative min-h-screen overflow-hidden">
+        <Section id="hero" ref={heroRef} variant="default" className="relative min-h-screen overflow-hidden">
             {/* BACKDROP */}
             <div className="absolute inset-0 bg-linear-to-b from-hero-backdrop-from via-hero-backdrop-via to-hero-backdrop-to" />
 
             {/* WATERMARK */}
-            <div className="pointer-events-none absolute inset-0 flex flex-col justify-center items-center gap-20">
+            <div className="pointer-events-none absolute inset-0 flex flex-col justify-center items-center pb-30 gap-30">
                 {watermark.map((text) => (
                     <WatermarkText key={text}>{text}</WatermarkText>
                 ))}
@@ -50,12 +52,16 @@ export const Hero = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-6 min-h-screen flex flex-col md:grid md:grid-cols-2 gap-12 md:gap-16 items-center">
                 {/* LOGO */}
                 <Reveal variants={fadeSide('left')}>
-                    <div className="mx-auto w-56 sm:w-64 lg:w-80 aspect-square">
+                    <div className="mx-auto w-56 sm:w-64 lg:w-90 aspect-square">
                         <AnimatedLogo
-                            duration={6}
-                            strokeColor="var(--color-text-primary)"
-                            gradientStart="var(--color-primary)"
-                            gradientEnd="var(--color-text-inverse)"
+                            gradients={{
+                                right: { start: "#aeaeae", end: "#ffffff" },
+                                left: { start: "#00274e", end: "#ffffff" },
+                                ring: { start: "#cecece", end: "#003366" },
+                            }}
+                            strokeDuration={6}
+                            fillDuration={4}
+                            fillDelay={0.35}
                         />
                     </div>
                 </Reveal>
@@ -76,8 +82,12 @@ export const Hero = () => {
                         </motion.div>
 
                         <motion.div variants={fadeUp} className="mt-8 flex gap-4 flex-col sm:flex-row">
-                            <Button intent="primary">{actions.primary.label}</Button>
-                            <Button intent="secondary">{actions.secondary.label} <WhatsAppIcon className=" h-5 w-5" /> </Button>
+                            <LinkButton intent="primary" href={actions.primary.href}>{actions.primary.label}</LinkButton>
+                            <LinkButton intent="secondary" href={actions.secondary.href}>{actions.secondary.label}
+                                <span className="ml-2">
+                                    <WhatsAppIcon className=" h-5 w-5" />
+                                </span>
+                            </LinkButton>
                         </motion.div>
                     </motion.div>
                 </Reveal>

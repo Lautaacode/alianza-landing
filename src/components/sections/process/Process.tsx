@@ -13,7 +13,7 @@ export const Process = () => {
     const { title, steps } = processContent
 
     return (
-        <Section variant="light">
+        <Section id="process" variant="light">
             <Reveal variants={stagger} className="max-w-5xl mx-auto">
                 {/* Header */}
                 <motion.div variants={fadeUp} className="mb-16 text-center">

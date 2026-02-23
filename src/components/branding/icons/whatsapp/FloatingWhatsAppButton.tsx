@@ -33,7 +33,7 @@ export const FloatingWhatsAppButton = () => {
 
                     {/* Button */}
                     <LinkButton
-                        href="https://wa.me/5491123456789?text=Hola%20quiero%20un%20diagnóstico"
+                        href="https://api.whatsapp.com/send/?phone=%2B541172366568&text&type=phone_number&app_absent=0"
                         intent="whatsapp"
                         size="icon"
                         className="

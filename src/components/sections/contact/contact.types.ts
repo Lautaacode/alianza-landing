@@ -1,6 +1,8 @@
 export interface ContactInfoItem {
-    icon: string
+    icon: React.ElementType
+    iconClass?: string
     label: string
+    href?: string
 }
 
 export interface ContactContent {

@@ -1,3 +1,4 @@
+// Reveal.tsx
 import { motion } from "framer-motion";
 import type { RevealProps } from "./reveal.types";
 

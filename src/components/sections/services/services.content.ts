@@ -1,39 +1,46 @@
 import type { ServicesContent } from './services.types'
+import {cardCorrective, cardModernization, cardNormative, cardPreventive, } from '../../branding/assets/webp'
 
 export const servicesContent: ServicesContent = {
     heading: {
-        title: 'Servicios diseñados para resolver problemas reales',
+        title: 'Servicios profesionales de mantenimiento y modernización de ascensores',
         description:
-            'Atención técnica profesional para particulares y empresas, con respuestas claras y tiempos reales.',
+            `Brindamos soluciones integrales en mantenimiento preventivo, correctivo, adecuación normativa
+            y modernización de ascensores, garantizando seguridad, eficiencia y cumplimiento regulatorio para consorcios,
+            empresas e industrias en CABA y Gran Buenos Aires.`,
     },
     items: [
         {
-            title: 'Reparación rápida y precisa',
-            description:
-                'Detectamos fallas de hardware y software para que tu equipo vuelva a funcionar sin pérdidas de tiempo.',
-            cta: 'Solicitar diagnóstico',
-            image: 'https://dummyimage.com/720x400',
-        },
-        {
             title: 'Mantenimiento preventivo',
             description:
-                'Evitá fallas futuras con limpieza interna, cambio de pasta térmica y optimización.',
-            cta: 'Ver mantenimiento',
-            image: 'https://dummyimage.com/721x401',
+                `Realizamos revisiones técnicas periódicas para garantizar el correcto funcionamiento de los ascensores.
+                Detectamos y corregimos fallas incipientes de forma anticipada, minimizando riesgos,
+                interrupciones del servicio y costos imprevistos.`,
+            image: cardPreventive,
         },
         {
-            title: 'Notebooks y PCs',
+            title: 'Mantenimiento correctivo',
             description:
-                'Reparamos equipos portátiles y de escritorio con repuestos y técnicas profesionales.',
-            cta: 'Consultar reparación',
-            image: 'https://dummyimage.com/722x402',
+                `Brindamos intervenciones técnicas rápidas y eficientes ante fallas o paradas del equipo.
+                Nuestro servicio incluye diagnóstico preciso y reparación utilizando repuestos originales
+                o equivalentes certificados, asegurando confiabilidad y durabilidad.`,
+            image: cardCorrective,
         },
         {
-            title: 'Soporte técnico a empresas',
+            title: 'Adecuación a normativa',
             description:
-                'Mantenimiento continuo y soporte confiable para entornos corporativos.',
-            cta: 'Hablar con un técnico',
-            image: 'https://dummyimage.com/723x403',
+            `Ofrecemos asesoramiento técnico especializado y ejecución de las mejoras necesarias para cumplir
+            con las reglamentaciones vigentes. Incorporamos sistemas de seguridad,
+            señalización reglamentaria y soluciones de accesibilidad, garantizando instalaciones conformes y seguras.`,
+            image: cardNormative,
+        },
+        {
+            title: 'Modernización de ascensores',
+            description:
+                `Actualizamos equipos antiguos para adaptarlos a las nuevas normas técnicas y estéticas,
+                mejorando la seguridad, eficiencia energética y confort de uso. Optimizamos el rendimiento del ascensor
+                y prolongamos su vida útil, revalorizando el edificio.`,
+            image: cardModernization,
         },
     ],
 }

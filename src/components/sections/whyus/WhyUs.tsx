@@ -11,7 +11,7 @@ export const WhyUs = () => {
     const { heading, items } = whyUsContent
 
     return (
-        <Section variant="default">
+        <Section id="whyus" variant="default">
             <Reveal variants={stagger} className="max-w-6xl mx-auto">
                 {/* Header */}
                 <motion.div
@@ -26,20 +26,23 @@ export const WhyUs = () => {
 
                 {/* Reasons */}
                 <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                    {items.map(item => (
-                        <MotionCard
-                            key={item.title}
-                            variant="whyus"
-                            animation={fadeUp}
-                            hoverLift
-                            className={
-                                item.highlight
-                                    ? 'ring-1 ring-primary/20 shadow-lg'
-                                    : ''
-                            }
-                        >
-                            <div
-                                className="
+                    {items.map(item => {
+                        const Icon = item.icon
+
+                        return (
+                            <MotionCard
+                                key={item.title}
+                                variant="whyus"
+                                animation={fadeUp}
+                                hoverLift
+                                className={
+                                    item.highlight
+                                        ? 'ring-1 ring-primary/20 shadow-lg'
+                                        : ''
+                                }
+                            >
+                                <div
+                                    className="
                     w-12 h-12 mx-auto mb-6
                     rounded-full
                     bg-primary/10
@@ -47,19 +50,20 @@ export const WhyUs = () => {
                     flex items-center justify-center
                     font-semibold
                     "
-                            >
-                                ✓
-                            </div>
+                                >
+                                    <Icon className="w-5 h-5 text-primary" />
+                                </div>
 
-                            <Heading as="h3" level="md">
-                                {item.title}
-                            </Heading>
+                                <Heading as="h3" level="md">
+                                    {item.title}
+                                </Heading>
 
-                            <Text tone="muted" className="mt-3">
-                                {item.description}
-                            </Text>
-                        </MotionCard>
-                    ))}
+                                <Text tone="muted" className="mt-3">
+                                    {item.description}
+                                </Text>
+                            </MotionCard>
+                        )
+                    })}
                 </div>
             </Reveal>
         </Section>

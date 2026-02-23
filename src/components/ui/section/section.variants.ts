@@ -1,6 +1,7 @@
 // section.variants.ts
 export const sectionBase = `
     py-section
+    scroll-mt-16
 `
 
 export const sectionVariants = {

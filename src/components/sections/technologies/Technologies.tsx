@@ -7,12 +7,11 @@ import { SectionHeader } from "../../ui/sectionHeader/SectionHeader";
 import { Heading, Text } from "../../ui/typography";
 import { technologiesContent } from "../technologies";
 
-
 export const Technologies = () => {
     const { heading, items } = technologiesContent
 
     return (
-        <Section variant="default">
+        <Section id="technologies" variant="default">
             <Reveal variants={stagger} className="max-w-6xl mx-auto">
                 {/* Header */}
                 <motion.div
@@ -27,24 +26,36 @@ export const Technologies = () => {
 
                 {/* Cards */}
                 <div className="mt-16 grid md:grid-cols-3 gap-10">
-                    {items.map(tech => (
-                        <MotionCard
-                            key={tech.title}
-                            variant="technology"
-                            animation={fadeUp}
-                            hoverLift
-                        >
-                            <div className="w-10 h-10 mb-6 rounded-md bg-primary/10" />
+                    {items.map(tech => {
+                        const Icon = tech.icon
 
-                            <Heading as="h3" level="md">
-                                {tech.title}
-                            </Heading>
+                        return (
+                            <MotionCard
+                                key={tech.title}
+                                variant="technology"
+                                animation={fadeUp}
+                                hoverLift
+                            >
+                                <div
+                                    className="
+                                flex items-center justify-center
+                                w-10 h-10 mb-6
+                                rounded-md bg-primary/10
+                                "
+                                >
+                                    <Icon className="w-5 h-5 text-primary" />
+                                </div>
 
-                            <Text tone="muted" className="mt-4">
-                                {tech.description}
-                            </Text>
-                        </MotionCard>
-                    ))}
+                                <Heading as="h3" level="md">
+                                    {tech.title}
+                                </Heading>
+
+                                <Text tone="muted" className="mt-4">
+                                    {tech.description}
+                                </Text>
+                            </MotionCard>
+                        )
+                    })}
                 </div>
             </Reveal>
         </Section>
