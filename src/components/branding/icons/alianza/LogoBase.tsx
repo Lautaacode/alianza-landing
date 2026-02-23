@@ -2,7 +2,7 @@
 
 import { forwardRef, useId, useMemo } from "react"
 import { motion } from "framer-motion"
-import type { LogoProps } from "./logo.types"
+import type { LogoProps } from "./Logo.types"
 import React from "react"
 
 export const LogoBase = React.memo(forwardRef<SVGSVGElement, LogoProps>(
