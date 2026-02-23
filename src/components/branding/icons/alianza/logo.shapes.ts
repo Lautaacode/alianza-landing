@@ -1,8 +1,8 @@
 // logo.shapes.ts
 
 import type { Variants } from "framer-motion"
-import { PATH_D_A, PATH_D_RING } from "./Logo.path"
-import type { LogoGradients, LogoShapeConfig } from "./Logo.types"
+import { PATH_D_A, PATH_D_RING } from "./logo.path"
+import type { LogoGradients, LogoShapeConfig } from "./logo.types"
 import {
     createHorizontalRevealVariants,
     type RevealTiming,

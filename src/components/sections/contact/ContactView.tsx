@@ -1,5 +1,6 @@
-import { Button } from "../../ui/button"
-import { Input } from "../../ui/input"
+import { Button } from "../../ui/button/Button"
+import { Input } from "../../ui/input/Input"
+
 
 type ContactViewProps = {
     form: any
