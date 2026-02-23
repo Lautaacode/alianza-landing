@@ -2,7 +2,7 @@
 
 import { useMemo } from "react"
 import { LogoBase } from "./LogoBase"
-import type { AnimatedLogoProps, LogoGradients } from "./Logo.types"
+import type { AnimatedLogoProps, LogoGradients } from "./logo.types"
 import { createLogoShapes } from "./logo.shapes"
 import {
     createStrokeVariants,
