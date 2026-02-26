@@ -3,8 +3,9 @@ import type { HeroContent } from './hero.types'
 export const heroContent: HeroContent = {
     title: 'Mantenimiento profesional de ascensores',
     description:
-        `Más de 20 años de experiencia brindando un servicio seguro, confiable y
-        alineado con la normativa vigente para consorcios, empresas e industrias.`,
+        `Contamos con un equipo de trabajo de más de 20 años de trayectoria en el rubro,
+        lo que nos permite brindar un servicio ágil,
+        confiable y alineado con las exigencias actuales en materia de seguridad, normativa y funcionamiento.`,
     watermark: ['ALIANZA', 'ASCENSORES', 'DE ASCALIAN SAS'],
     actions: {
         primary: {
